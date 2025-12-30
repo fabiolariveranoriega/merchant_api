@@ -94,8 +94,8 @@ Revenue is also concentrated among a relatively small group of high-value client
 
 ### 1. Clone the Repository
 ```bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/fabiolariveranoriega/merchant_api
+cd merchant_api
 ```
 
 ### 2. Start the services
