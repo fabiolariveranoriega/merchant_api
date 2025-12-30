@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  api:
+    build: .
+    container_name: merchant_api
+    ports:
+      - "8000:8000"
+    depends_on:
+      - mysql
+    env_file:
+      - .env
+    volumes:
+      - .:/app
+
+  mysql:
+    image: mysql:8.0
+    container_name: merchant_mysql
+    restart: always
+    environment:
+      MYSQL_DATABASE: merchant_db
+      MYSQL_USER: merchant_user
+      MYSQL_PASSWORD: merchant_pass
+      MYSQL_ROOT_PASSWORD: root_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+volumes:
+  mysql_data:
